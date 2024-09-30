@@ -10,6 +10,7 @@ def pull_wordlist():
     with open("wordlist.json", 'w') as input_file:
         input_file.seek(0)
         json.dump(wordlist, input_file, indent=4)
+    print("Updated wordlist")
     return json.loads(json_file.text)
 if not os.path.exists("wordlist.json"):
     wordlist = pull_wordlist()
