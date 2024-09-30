@@ -3,9 +3,10 @@ import json
 import random
 import os
 
+online_list = "https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/wordlist.json"
+
 def pull_wordlist():
-    json_file = requests.get(
-        "https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/wordlist.json")
+    json_file = requests.get(online_list)
     wordlist = json_file.json()
     with open("wordlist.json", 'w') as input_file:
         input_file.seek(0)
@@ -18,7 +19,7 @@ else:
     local_json_file = open("wordlist.json", "r").read()
     local_wordlist = json.loads(local_json_file)
     local_version = float(local_wordlist["version"])
-    online_json_file = requests.get("https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/wordlist.json")
+    online_json_file = requests.get(online_list)
     online_wordlist = json.loads(online_json_file.text)
     online_version = float(local_wordlist["version"])
     if online_version > local_version:
