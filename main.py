@@ -13,15 +13,18 @@ def pull_wordlist():
         json.dump(wordlist, input_file, indent=4)
     print("Updated wordlist")
     return json.loads(json_file.text)
+
+
 if not os.path.exists("wordlist.json"):
     wordlist = pull_wordlist()
 else:
     local_json_file = open("wordlist.json", "r").read()
     local_wordlist = json.loads(local_json_file)
     local_version = float(local_wordlist["version"])
-    online_json_file = requests.get(online_list)
+    online_json_file = requests.get("https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/wordlist.json")
     online_wordlist = json.loads(online_json_file.text)
     online_version = float(local_wordlist["version"])
+    print(online_version, local_version)
     if online_version > local_version:
         wordlist = pull_wordlist()
     else:
