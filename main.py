@@ -21,10 +21,9 @@ else:
     local_json_file = open("wordlist.json", "r").read()
     local_wordlist = json.loads(local_json_file)
     local_version = float(local_wordlist["version"])
-    online_json_file = requests.get("https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/wordlist.json")
+    online_json_file = requests.get(online_list)
     online_wordlist = json.loads(online_json_file.text)
-    online_version = float(local_wordlist["version"])
-    print(online_version, local_version)
+    online_version = float(online_wordlist["version"])
     if online_version > local_version:
         wordlist = pull_wordlist()
     else:

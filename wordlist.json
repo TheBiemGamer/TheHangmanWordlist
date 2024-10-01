@@ -1,5 +1,5 @@
 {
-    "version": "0.2",
+    "version": "0.3",
     "easy": [
         "penholder",
         "cathedral",
@@ -26,7 +26,9 @@
         "rectangle",
         "unlocking",
         "comprised",
-        "nintendo"
+        "nintendo",
+        "cursing",
+        "deafmetal"
     ],
     "medium": [
         "arise",
@@ -54,7 +56,8 @@
         "bleak",
         "speed",
         "rigor",
-        "noah"
+        "noah",
+        "balls"
     ],
     "hard": [
         "why",
@@ -81,6 +84,7 @@
         "owl",
         "art",
         "map",
-        "baby"
+        "baby",
+        "eepy"
     ]
 }
