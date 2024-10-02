@@ -1,4 +1,4 @@
-![Screenshot of code](assets/10015-io-code-screenshot.svg)
+![Screenshot of code](assets/10015-io-code-screenshot.png)
 [![PyPI version](https://badge.fury.io/py/the-hangman-wordlist.svg)](https://badge.fury.io/py/the-hangman-wordlist)
 > [!NOTE]
 > A simple [Python library](https://pypi.org/project/the-hangman-wordlist/) with a wordlist for use with hangman featuring easy, medium and hard words!
