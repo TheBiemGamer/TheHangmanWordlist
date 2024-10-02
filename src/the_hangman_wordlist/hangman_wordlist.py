@@ -1,5 +1,5 @@
 """
-The Hangman Wordlist v0.8.1
+The Hangman Wordlist v0.8.2
 By Noah Bozkurt and Jurriaan Portier
 
 Example usage:
@@ -18,6 +18,7 @@ import requests
 import json
 import random
 import os
+from importlib_metadata import version
 
 class HangmanWordlist:
     def __init__(self):
@@ -25,6 +26,7 @@ class HangmanWordlist:
         self.local_file = "wordlist.json"
         self.wordlist = self.load_wordlist()
         self.difficulties = ["easy", "medium", "hard"]
+        self.current_version = version("the_hangman_wordlist")
 
     def fetch_online_wordlist(self):
         response = requests.get(self.online_list)
@@ -58,9 +60,6 @@ class HangmanWordlist:
         word = random.choice(self.wordlist[diff])
         return word, self.wordlist["version"]
 
-if __name__ == "__main__":
-    wordlist = HangmanWordlist()
-    word, version = wordlist.pull_word()
-    print(f"\nThe word is: '{word}'")
-    print(f"Wordlist v{version}")
-    input("\nPress Enter to exit...")
+    def version(self):
+        return self.current_version
+
