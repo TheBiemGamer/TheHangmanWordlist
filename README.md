@@ -1,4 +1,3 @@
-# The Hangman Wordlist
 ![Screenshot of code](assets/10015-io-code-screenshot.png)
 A simple Python library with a wordlist for use with hangman featuring easy, medium and hard words!
 
