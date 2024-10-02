@@ -5,6 +5,8 @@ A simple Python library with a wordlist for use with hangman featuring easy, med
 First install the package:
 ```bash
 $ pip install the-hangman-wordlist
+```
+```bash
 $ pip3 install the-hangman-wordlist
 ```
 Then you can use it like this:
