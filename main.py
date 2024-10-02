@@ -31,7 +31,6 @@ def pull_word(diff):
             wordlist = local_wordlist
 
     word = random.choice(wordlist[diff])
-    print(wordlist["version"])
     return word, wordlist["version"]
 
 difficulty = input("What difficulty do you want? (easy/medium/hard): ")
