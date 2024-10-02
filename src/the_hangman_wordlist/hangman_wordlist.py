@@ -24,6 +24,7 @@ class HangmanWordlist:
         self.online_list = "https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/src/the_hangman_wordlist/wordlist.json"
         self.local_file = "wordlist.json"
         self.wordlist = self.load_wordlist()
+        self.difficulties = ["easy", "medium", "hard"]
 
     def fetch_online_wordlist(self):
         response = requests.get(self.online_list)
@@ -50,6 +51,16 @@ class HangmanWordlist:
         with open(self.local_file, "w") as output_file:
             json.dump(wordlist, output_file, indent=4)
 
-    def pull_word(self, diff):
+    def pull_word(self, diff = None):
+        if diff is None or diff == "" or diff not in self.difficulties:
+            diff = random.choice(self.difficulties)
+            print(f"Something is wrong with the passed difficulty setting it to '{diff}'.")
         word = random.choice(self.wordlist[diff])
         return word, self.wordlist["version"]
+
+if __name__ == "__main__":
+    wordlist = HangmanWordlist()
+    word, version = wordlist.pull_word()
+    print(f"\nThe word is: '{word}'")
+    print(f"Wordlist v{version}")
+    input("\nPress Enter to exit...")
