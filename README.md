@@ -20,20 +20,31 @@ def pull_wordlist():
     return json.loads(json_file.text)
 
 
-if not os.path.exists("wordlist.json"):
-    wordlist = pull_wordlist()
-else:
-    local_json_file = open("wordlist.json", "r").read()
-    local_wordlist = json.loads(local_json_file)
-    local_version = float(local_wordlist["version"])
-    online_json_file = requests.get(online_list)
-    online_wordlist = json.loads(online_json_file.text)
-    online_version = float(online_wordlist["version"])
-    if online_version > local_version:
+def pull_word(diff):
+    if not os.path.exists("wordlist.json"):
         wordlist = pull_wordlist()
     else:
-        wordlist = local_wordlist
+        local_json_file = open("wordlist.json", "r").read()
+        local_wordlist = json.loads(local_json_file)
+        local_version = float(local_wordlist["version"])
+        online_json_file = requests.get(online_list)
+        online_wordlist = json.loads(online_json_file.text)
+        online_version = float(online_wordlist["version"])
+        if online_version > local_version:
+            wordlist = pull_wordlist()
+        else:
+            wordlist = local_wordlist
+
+    word = random.choice(wordlist[diff])
+    return word, wordlist["version"]
+
+difficulty = input("What difficulty do you want? (easy/medium/hard): ")
+word, version = pull_word(difficulty)
+print(f"\nThe {difficulty} word is: '{word}'")
+print(f"Wordlist v{version}")
+input("\nPress Enter to exit...")
 ```
 
 ### Credits
 - [Jurriaaaantje](https://github.com/Jurriaaaantje) (Wordlist words and update wordlist functionality)
+- [TheBiemGamer](https://github.com/TheBiemGamer) (Version check and json functionality)
