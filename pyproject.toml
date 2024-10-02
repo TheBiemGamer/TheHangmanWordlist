@@ -3,12 +3,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "the_hangman_wordlist_TheBiemGamer"
-version = "0.4"
+name = "the_hangman_wordlist"
+version = "0.6"
 authors = [
   { name="TheBiemGamer", email="47662596+TheBiemGamer@users.noreply.github.com" },
 ]
-description = "A small example package"
+description = "A library to pick hangman words."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -22,4 +22,4 @@ Homepage = "https://github.com/TheBiemGamer/TheHangmanWordlist"
 Issues = "https://github.com/TheBiemGamer/TheHangmanWordlist/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/the_hangman_wordlist_TheBiemGamer"]
+packages = ["src/the_hangman_wordlist"]
