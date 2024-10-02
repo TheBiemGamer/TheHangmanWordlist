@@ -21,4 +21,4 @@ if __name__ == "__main__":
 
 ### Credits
 - [Jurriaaaantje](https://github.com/Jurriaaaantje) (Wordlist words and update wordlist functionality)
-- [TheBiemGamer](https://github.com/TheBiemGamer) (Version check and json functionality)
+- [TheBiemGamer](https://github.com/TheBiemGamer) (Version check, json functionality and library)
