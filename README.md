@@ -12,18 +12,30 @@ or
 ```bash
 $ pip3 install the-hangman-wordlist
 ```
-Then you could use it like in this example code:
+Then you could use it like the following example code which generates words endlessly:
 ```py
 from the_hangman_wordlist import HangmanWordlist
 
 if __name__ == "__main__":
     wordlist = HangmanWordlist()
-    difficulty = input("What difficulty do you want? (easy/medium/hard): ")
+
+    difficulty = ""
+    while difficulty not in {"easy", "medium", "hard", "random"}:
+        difficulty = input("What difficulty do you want? (easy/medium/hard/random): ").lower()
+        difficulty = {
+            "e": "easy",
+            "m": "medium",
+            "h": "hard",
+            "r": "random"
+        }.get(difficulty, difficulty)
+
     script_version, wordlist_version = wordlist.version()
-    word = wordlist.pull_word(difficulty)
-    print(f"\nThe {difficulty} word is: '{word}'")
-    print(f"Wordlist v{wordlist_version} and Script v{script_version}")
-    input("\nPress Enter to exit...")
+    print(f"Script v{script_version} and wordlist v{wordlist_version}.")
+
+    while True:
+        print(f"\n{difficulty.capitalize()} difficulty word: '{wordlist.pull_word(difficulty)}'\n")
+        if input("Press Enter to generate a word or type 'exit' to quit... ").lower() == "exit":
+            break
 ```
 
 ### Functions
