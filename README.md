@@ -5,6 +5,7 @@ A simple json wordlist for use with hangman with easy, medium and hard words!
 First install the package:
 ```bash
 $ pip install the-hangman-wordlist
+$ pip3 install the-hangman-wordlist
 ```
 Then you can use it like this:
 ```py
