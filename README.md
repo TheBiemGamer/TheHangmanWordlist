@@ -41,8 +41,13 @@ def save_wordlist(wordlist):
 
 def pull_word(difficulty):
     # Checks if the difficulty passed is a correct option if not it chooses a random difficulty and then it returns a random word from the chosen difficulty and the wordlist version.
+    # Output:
+    # ('word', 'wordlist_version')
+
+def version():
+    # Simply returns the current script version similair to the version returned by pull_word but the script and wordlist version can differ.
 ```
-Only the pull_world() function was made to be called by the user the different functions should be called automatically when the script is initialized.
+Only the pull_word() and version() functions were made to be called by the user the different functions should be called automatically when the script is initialized.
 
 ### Credits
 - [Jurriaaaantje](https://github.com/Jurriaaaantje) (Wordlist words and update wordlist functionality)
