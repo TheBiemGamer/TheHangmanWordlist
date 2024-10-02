@@ -1,5 +1,5 @@
 """
-The Hangman Wordlist v0.6
+The Hangman Wordlist v0.6.1
 By Noah Bozkurt and Jurriaan Portier
 
 Example usage:
@@ -21,7 +21,7 @@ import os
 
 class HangmanWordlist:
     def __init__(self):
-        self.online_list = "https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/src/the_hangman_wordlist_TheBiemGamer/wordlist.json"
+        self.online_list = "https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/src/the_hangman_wordlist/wordlist.json"
         self.local_file = "wordlist.json"
         self.wordlist = self.load_wordlist()
 
