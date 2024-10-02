@@ -31,5 +31,6 @@ else:
 
 difficulty = input("What difficulty do you want? (easy/medium/hard): ")
 word = random.choice(wordlist[difficulty])
-print(word)
-print(data["version"])
+print(f"\nThe {difficulty} word is: '{word}'")
+print(f"Wordlist v{wordlist["version"]}")
+input("\nPress Enter to exit...")
