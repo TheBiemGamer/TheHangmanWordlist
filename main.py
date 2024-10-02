@@ -32,7 +32,10 @@ def pull_word(diff):
 
     word = random.choice(wordlist[diff])
     print(wordlist["version"])
-    return word
+    return word, wordlist["version"]
 
 difficulty = input("What difficulty do you want? (easy/medium/hard): ")
-print(pull_word(difficulty))
+word, version = pull_word(difficulty)
+print(f"\nThe {difficulty} word is: '{word}'")
+print(f"Wordlist v{version}")
+input("\nPress Enter to exit...")
