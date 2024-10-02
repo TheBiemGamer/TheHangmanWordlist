@@ -1,5 +1,5 @@
 ![Screenshot of code](assets/10015-io-code-screenshot.png)
-A simple Python library with a wordlist for use with hangman featuring easy, medium and hard words!
+A simple [Python library](https://pypi.org/project/the-hangman-wordlist/) with a wordlist for use with hangman featuring easy, medium and hard words!
 
 ### Usage
 First install the package:
