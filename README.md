@@ -1,7 +1,7 @@
 # The Hangman Wordlist
-A simple json wordlist for use with hangman with easy, medium and hard words!
+A simple Python library with a wordlist for use with hangman featuring easy, medium and hard words!
 
-### Example usage in python
+### Example usage
 First install the package:
 ```bash
 $ pip install the-hangman-wordlist
