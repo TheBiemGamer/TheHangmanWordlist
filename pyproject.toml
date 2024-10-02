@@ -18,8 +18,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/TheBiemGamer/TheHangmanWordlist"
-Issues = "https://github.com/TheBiemGamer/TheHangmanWordlist/issues"
+Homepage = "https://thebiemgamer.github.io/TheHangmanWordlist"
+Source = "https://github.com/TheBiemGamer/TheHangmanWordlist"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/the_hangman_wordlist"]
