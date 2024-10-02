@@ -13,6 +13,7 @@ if __name__ == "__main__":
     print(f"Wordlist v{version}")
     input("\nPress Enter to exit...")
 """
+
 import requests
 import json
 import random
@@ -21,30 +22,34 @@ import os
 class HangmanWordlist:
     def __init__(self):
         self.online_list = "https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/wordlist.json"
-        self.wordlist = HangmanWordlist.pull_wordlist(self)
+        self.local_file = "wordlist.json"
+        self.wordlist = self.load_wordlist()
 
-    def pull_wordlist(self):
-        json_file = requests.get(self.online_list)
-        wordlist = json_file.json()
-        with open("wordlist.json", 'w') as input_file:
-            input_file.seek(0)
-            json.dump(wordlist, input_file, indent=4)
-        print("Updated wordlist")
-        return json.loads(json_file.text)
+    def fetch_online_wordlist(self):
+        response = requests.get(self.online_list)
+        return response.json()
+
+    def load_wordlist(self):
+        if os.path.exists(self.local_file):
+            with open(self.local_file, "r") as local_file:
+                local_wordlist = json.load(local_file)
+            online_wordlist = self.fetch_online_wordlist()
+            if float(online_wordlist["version"]) > float(local_wordlist["version"]):
+                self.save_wordlist(online_wordlist)
+                print("Updated wordlist")
+                return online_wordlist
+            else:
+                return local_wordlist
+        else:
+            wordlist = self.fetch_online_wordlist()
+            self.save_wordlist(wordlist)
+            print("Downloaded and saved new wordlist")
+            return wordlist
+
+    def save_wordlist(self, wordlist):
+        with open(self.local_file, "w") as output_file:
+            json.dump(wordlist, output_file, indent=4)
 
     def pull_word(self, diff):
-        if not os.path.exists("wordlist.json"):
-            wordlist = HangmanWordlist.pull_wordlist(diff)
-        else:
-            local_json_file = open("wordlist.json", "r").read()
-            local_wordlist = json.loads(local_json_file)
-            local_version = float(local_wordlist["version"])
-            online_json_file = requests.get(self.online_list)
-            online_wordlist = json.loads(online_json_file.text)
-            online_version = float(online_wordlist["version"])
-            if online_version > local_version:
-                wordlist = HangmanWordlist.pull_wordlist(diff)
-            else:
-                wordlist = local_wordlist
-        word = random.choice(wordlist[diff])
-        return word, wordlist["version"]
+        word = random.choice(self.wordlist[diff])
+        return word, self.wordlist["version"]
