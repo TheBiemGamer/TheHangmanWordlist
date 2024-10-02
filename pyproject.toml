@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "the_hangman_wordlist"
-version = "0.8"
+version = "0.8.1"
 authors = [
   { name="TheBiemGamer", email="47662596+TheBiemGamer@users.noreply.github.com" },
 ]
@@ -19,7 +19,7 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://thebiemgamer.github.io/TheHangmanWordlist"
-Source = "https://github.com/TheBiemGamer/TheHangmanWordlist"
+"Source Code" = "https://github.com/TheBiemGamer/TheHangmanWordlist"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/the_hangman_wordlist"]

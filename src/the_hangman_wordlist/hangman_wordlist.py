@@ -1,5 +1,5 @@
 """
-The Hangman Wordlist v0.7
+The Hangman Wordlist v0.8.1
 By Noah Bozkurt and Jurriaan Portier
 
 Example usage:

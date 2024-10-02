@@ -29,7 +29,7 @@ if __name__ == "__main__":
 ```py
 def __init__():
     # Loads when HangmanWordlist is imported, sets the variables and loads the wordlist with the load_wordlist() function.
-    
+
 def fetch_online_wordlist():
     # Fetches the wordlist online and returns it as json.
 
