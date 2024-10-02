@@ -23,3 +23,12 @@ Homepage = "https://thebiemgamer.github.io/TheHangmanWordlist"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/the_hangman_wordlist"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/assets",
+  "_config.yml",
+  ".gitignore",
+  ".gitattributes",
+  "*.json"
+]
