@@ -1,5 +1,5 @@
 """
-The Hangman Wordlist v0.8.2
+The Hangman Wordlist
 By Noah Bozkurt and Jurriaan Portier
 
 Example usage:
@@ -8,9 +8,10 @@ from the_hangman_wordlist import HangmanWordlist
 if __name__ == "__main__":
     wordlist = HangmanWordlist()
     difficulty = input("What difficulty do you want? (easy/medium/hard): ")
-    word, version = wordlist.pull_word(difficulty)
+    script_version, wordlist_version = wordlist.version()
+    word = wordlist.pull_word(difficulty)
     print(f"\nThe {difficulty} word is: '{word}'")
-    print(f"Wordlist v{version}")
+    print(f"Wordlist v{wordlist_version} and Script v{script_version}")
     input("\nPress Enter to exit...")
 """
 
@@ -58,8 +59,7 @@ class HangmanWordlist:
             diff = random.choice(self.difficulties)
             print(f"Something is wrong with the passed difficulty setting it to '{diff}'.")
         word = random.choice(self.wordlist[diff])
-        return word, self.wordlist["version"]
+        return word
 
     def version(self):
-        return self.current_version
-
+        return self.current_version, self.wordlist["version"]

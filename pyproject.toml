@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "the_hangman_wordlist"
-version = "0.8.2"
+version = "0.9"
 authors = [
-  { name="TheBiemGamer", email="47662596+TheBiemGamer@users.noreply.github.com" },
+  { name="TheBiemGamer", email="noah.bozkurt@student.hu.nl" },
 ]
-description = "A library to pick hangman words."
+description = "A simple (and small) library to randomly pick hangman words from a predefined wordlist."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [

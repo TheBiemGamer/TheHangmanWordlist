@@ -19,9 +19,10 @@ from the_hangman_wordlist import HangmanWordlist
 if __name__ == "__main__":
     wordlist = HangmanWordlist()
     difficulty = input("What difficulty do you want? (easy/medium/hard): ")
-    word, version = wordlist.pull_word(difficulty)
+    script_version, wordlist_version = wordlist.version()
+    word = wordlist.pull_word(difficulty)
     print(f"\nThe {difficulty} word is: '{word}'")
-    print(f"Wordlist v{version}")
+    print(f"Wordlist v{wordlist_version} and Script v{script_version}")
     input("\nPress Enter to exit...")
 ```
 
@@ -40,12 +41,12 @@ def save_wordlist(wordlist):
     # Saves the passed wordlist to wordlist.json
 
 def pull_word(difficulty):
-    # Checks if the difficulty passed is a correct option if not it chooses a random difficulty and then it returns a random word from the chosen difficulty and the wordlist version.
-    # Output:
-    # ('word', 'wordlist_version')
+    # Checks if the difficulty passed is a correct option if not it chooses a random difficulty and then it returns a random word from the chosen difficulty.
 
 def version():
-    # Simply returns the current script version similair to the version returned by pull_word but the script and wordlist version can differ.
+    # Simply returns the current script version and wordlist version as a list like this:
+    # ('script_version', 'wordlist_version')
+
 ```
 Only the pull_word() and version() functions were made to be called by the user the different functions should be called automatically when the script is initialized.
 
