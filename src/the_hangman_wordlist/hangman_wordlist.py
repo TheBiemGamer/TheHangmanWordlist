@@ -25,13 +25,23 @@ class HangmanWordlist:
     def load_wordlist(self):
         local_wordlist = None
         if os.path.exists(self.local_file):
-            with open(self.local_file, "r") as local_file:
-                local_wordlist = json.load(local_file)
+            try:
+                with open(self.local_file, "r") as local_file:
+                    local_wordlist = json.load(local_file)
+            except json.JSONDecodeError:
+                print("Local wordlist file is corrupted or empty. Re-downloading...")
+                local_wordlist = None
+
         if local_wordlist is None or "version" not in local_wordlist:
-            wordlist = self.fetch_online_wordlist()
-            self.save_wordlist(wordlist)
-            print("Downloaded and saved new wordlist")
-            return wordlist
+            try:
+                wordlist = self.fetch_online_wordlist()
+                self.save_wordlist(wordlist)
+                print("Downloaded and saved new wordlist")
+                return wordlist
+            except requests.RequestException:
+                print("Failed to fetch online wordlist, and no valid local wordlist found.")
+                raise
+
         try:
             online_wordlist = self.fetch_online_wordlist()
             if float(online_wordlist["version"]) > float(local_wordlist["version"]):
