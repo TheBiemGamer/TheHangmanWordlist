@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "the_hangman_wordlist"
-version = "1.0.2"
+version = "1.0.3"
 authors = [
   { name="Noah Bozkurt" },
   { name="Jurriaan Portier" },
@@ -16,6 +16,10 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+]
+dependencies = [
+  "importlib-metadata",
+  "requests"
 ]
 
 [project.urls]
