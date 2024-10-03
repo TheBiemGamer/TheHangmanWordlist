@@ -1,5 +1,5 @@
 ![Screenshot of code](https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/assets/10015-io-code-screenshot.png)
-![PyPI - Version](https://img.shields.io/pypi/v/the-hangman-wordlist?style=flat&logo=python&logoColor=%23ffffff&link=https%3A%2F%2Fpypi.org%2Fproject%2Fthe-hangman-wordlist%2F)
+[![PyPI - Version](https://img.shields.io/pypi/v/the-hangman-wordlist?style=flat&logo=python)](https://pypi.org/project/the-hangman-wordlist/)
 > [!NOTE]
 > A simple [Python library](https://pypi.org/project/the-hangman-wordlist/) with a wordlist for use with hangman featuring easy, medium and hard words!
 
