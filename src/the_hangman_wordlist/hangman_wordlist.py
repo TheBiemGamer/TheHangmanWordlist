@@ -39,8 +39,7 @@ class HangmanWordlist:
                 print("Downloaded and saved new wordlist")
                 return wordlist
             except requests.RequestException:
-                print("Failed to fetch online wordlist, and no valid local wordlist found.")
-                raise
+                raise Exception("Failed to fetch online wordlist, and no valid local wordlist found.")
 
         try:
             online_wordlist = self.fetch_online_wordlist()
@@ -61,10 +60,12 @@ class HangmanWordlist:
     def pull_word(self, diff = None):
         if diff is None or diff not in self.difficulties:
             diff = random.choice(self.difficulties)
+
         while True:
             new_word = random.choice(self.wordlist[diff])
             if new_word != self.word:
                 break
+
         self.word = new_word
         return self.word
 
