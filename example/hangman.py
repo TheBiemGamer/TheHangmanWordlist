@@ -6,7 +6,7 @@ word = wordlist.pull_word()
 
 def return_letters(word_to_return):
     word_string = ""
-    for char in word_to_print:
+    for char in word_to_return:
         if char in guessed_letters:
             word_string += char + " "
         else:
