@@ -6,8 +6,8 @@ build-backend = "hatchling.build"
 name = "the_hangman_wordlist"
 version = "1.0.4"
 authors = [
-  { name="Noah Bozkurt" },
-  { name="Jurriaan Portier" },
+  { name = "Noah Bozkurt" },
+  { name = "Jurriaan Portier" },
 ]
 description = "A simple (and small) library to randomly pick hangman words from a predefined wordlist."
 readme = "README.md"
