@@ -4,7 +4,7 @@ from hangman_art import return_art
 wordlist = HangmanWordlist()
 word = wordlist.pull_word()
 
-def return_letters(word_to_print):
+def return_letters(word_to_return):
     word_string = ""
     for char in word_to_print:
         if char in guessed_letters:
@@ -18,7 +18,7 @@ def check_win(word_to_check):
         return True
     return False
 
-def check_letter(guess_to_check , guessed_letters_list, correct_letters_list):
+def check_letter(guess_to_check, guessed_letters_list, correct_letters_list):
     if guess_to_check == word:
         for char in guess_to_check:
             check_letter(char, guessed_letters_list, correct_letters_list)
