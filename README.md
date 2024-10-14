@@ -1,24 +1,56 @@
 ![Screenshot of code](https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/assets/10015-io-code-screenshot.png)
 [![PyPI - Version](https://img.shields.io/pypi/v/the-hangman-wordlist?style=flat&logo=python)](https://pypi.org/project/the-hangman-wordlist/)
-> [!NOTE]
-> A simple [Python library](https://pypi.org/project/the-hangman-wordlist/) with a wordlist for use with hangman featuring easy, medium and hard words!
+
+### Overview
+**The Hangman Wordlist** is a Python package designed to provide a diverse selection of words for playing the classic game of Hangman. It features a robust word list that can be updated from an online source, allowing for fresh gameplay experiences. This package was created by Noah Bozkurt and Jurriaan Portier.
+
+### Installation
+You can install the package via pip:
+```bash
+pip install the-hangman-wordlist
+```
+
+### Features
+- Word Retrieval: Fetches a word list from an online source to ensure it is up-to-date.
+- Local Caching: Saves the word list locally to minimize download time and ensure availability offline.
+- Difficulty Levels: Supports three levels of difficulty: easy, medium, and hard.
+- Random Word Selection: Allows for random word selection across different difficulties.
 
 ### Usage
-First install the package:
-```bash
-$ pip install the-hangman-wordlist
+To use the Hangman Wordlist package, import it and create an instance of `HangmanWordlist`:
+```python
+from the_hangman_wordlist import HangmanWordlist
+
+# Initialize the wordlist
+wordlist = HangmanWordlist()
 ```
-or
-```bash
-$ pip3 install the-hangman-wordlist
+
+### Pulling a Word
+To pull a word from the list, use the pull_word method. You can specify the difficulty level or let the package choose one at random:
+```python
+word = wordlist.pull_word(diff="easy")  # Pulls an easy word
 ```
-Then you could use it like the following example code which generates words endlessly:
-```py
+If you want a random word regardless of difficulty:
+```python
+word = wordlist.pull_word()  # Pulls a word from any difficulty
+```
+
+### Getting Version Information
+To retrieve the current package version and the word list version, use the version method:
+```python
+script_version, wordlist_version = wordlist.version()
+print(f"Library v{script_version} and wordlist v{wordlist_version}.")
+```
+
+### Example Script
+Here is a simple script demonstrating how to use the package:
+```python
 from the_hangman_wordlist import HangmanWordlist
 
 if __name__ == "__main__":
     wordlist = HangmanWordlist()
-
+    print("This is the example script for The Hangman Wordlist")
+    
     difficulty = ""
     while difficulty not in {"easy", "medium", "hard", "random"}:
         difficulty = input("What difficulty do you want? (easy/medium/hard/random): ").lower()
@@ -27,10 +59,10 @@ if __name__ == "__main__":
             "m": "medium",
             "h": "hard",
             "r": "random"
-        }.get(difficulty, difficulty)
+        }.get(difficulty, difficulty)Jurriaan
 
     script_version, wordlist_version = wordlist.version()
-    print(f"Script v{script_version} and wordlist v{wordlist_version}.")
+    print(f"Library v{script_version} and wordlist v{wordlist_version}.")
 
     while True:
         print(f"\n{difficulty.capitalize()} difficulty word: '{wordlist.pull_word(difficulty)}'\n")
@@ -38,30 +70,5 @@ if __name__ == "__main__":
             break
 ```
 
-### Functions
-```py
-def __init__():
-    # Loads when HangmanWordlist is imported, sets the variables and loads the wordlist with the load_wordlist() function.
-
-def fetch_online_wordlist():
-    # Fetches the wordlist online and returns it as json.
-
-def load_wordlist():
-    # Checks if the user has a copy of the wordlist.json and if it's up to date and then downloads it if necessary with the save_wordlist() function.
-
-def save_wordlist(wordlist):
-    # Saves the passed wordlist to wordlist.json
-
-def pull_word(difficulty):
-    # Checks if the difficulty passed is a correct option if not it chooses a random difficulty and then it returns a random word from the chosen difficulty.
-
-def version():
-    # Simply returns the current script version and wordlist version as a list like this:
-    # ('script_version', 'wordlist_version')
-
-```
-Only the pull_word() and version() functions were made to be called by the user the different functions should be called automatically when the script is initialized.
-
-### Credits
-- [Jurriaaaantje](https://github.com/Jurriaaaantje) (Wordlist words and update wordlist functionality)
-- [TheBiemGamer](https://github.com/TheBiemGamer) (Version check, json functionality and library)
+### License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
