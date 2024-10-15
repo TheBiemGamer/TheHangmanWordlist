@@ -59,7 +59,7 @@ if __name__ == "__main__":
             "m": "medium",
             "h": "hard",
             "r": "random"
-        }.get(difficulty, difficulty)Jurriaan
+        }.get(difficulty, difficulty)
 
     script_version, wordlist_version = wordlist.version()
     print(f"Library v{script_version} and wordlist v{wordlist_version}.")
@@ -69,6 +69,7 @@ if __name__ == "__main__":
         if input("Press Enter to generate a word or type 'exit' to quit... ").lower() == "exit":
             break
 ```
+For a full example hangman game with the package see [example/hangman.py](example/hangman.py).
 
-### License
+## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
