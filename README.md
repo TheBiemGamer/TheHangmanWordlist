@@ -69,7 +69,7 @@ if __name__ == "__main__":
         if input("Press Enter to generate a word or type 'exit' to quit... ").lower() == "exit":
             break
 ```
-For a full example hangman game with the package see [example/hangman.py](example/hangman.py).
+For a full example hangman game with the package see [example/hangman.py](https://github.com/TheBiemGamer/TheHangmanWordlist/blob/main/example/hangman.py).
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/TheBiemGamer/TheHangmanWordlist/blob/main/LICENSE) file for details.
