@@ -1,7 +1,7 @@
 ![Screenshot of code](https://raw.githubusercontent.com/TheBiemGamer/TheHangmanWordlist/refs/heads/main/assets/10015-io-code-screenshot.png)
 [![PyPI - Version](https://img.shields.io/pypi/v/the-hangman-wordlist?style=flat&logo=python)](https://pypi.org/project/the-hangman-wordlist/)
 
-### Overview
+## Overview
 **The Hangman Wordlist** is a Python package designed to provide a diverse selection of words for playing the classic game of Hangman. It features a robust word list that can be updated from an online source, allowing for fresh gameplay experiences. This package was created by Noah Bozkurt and Jurriaan Portier.
 
 ### Installation
@@ -16,7 +16,7 @@ pip install the-hangman-wordlist
 - Difficulty Levels: Supports three levels of difficulty: easy, medium, and hard.
 - Random Word Selection: Allows for random word selection across different difficulties.
 
-### Usage
+## Usage
 To use the Hangman Wordlist package, import it and create an instance of `HangmanWordlist`:
 ```python
 from the_hangman_wordlist import HangmanWordlist
