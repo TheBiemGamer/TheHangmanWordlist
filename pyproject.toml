@@ -24,7 +24,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://thebiemgamer.github.io/TheHangmanWordlist"
-"Source Code" = "https://github.com/TheBiemGamer/TheHangmanWordlist"
+"Source Code" = "https://github.com/TheBiemGamer/The-Hangman-Wordlist"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/the_hangman_wordlist"]
